@@ -2,7 +2,7 @@
 # Project         : Mandriva Linux
 # Module          : dynamic
 # File            : dynamic.spec
-# Version         : $Id: dynamic.spec 60466 2006-09-07 09:01:20Z fcrozat $
+# Version         : $Id: dynamic.spec 223977 2007-06-26 00:13:24Z adamw $
 # Author          : Frederic Lepied and others
 # Created On      : Wed Aug  8 11:32:16 2001
 # License         : GPL
@@ -10,7 +10,7 @@
 #---------------------------------------------------------------
 
 %define name dynamic
-%define version 0.26.10
+%define version 0.26.11
 %define release %mkrel 1
 
 Summary: Scripts to automatically set up peripherals when plugged in 
