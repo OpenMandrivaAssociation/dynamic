@@ -26,6 +26,7 @@ Requires: psmisc, mount, usbutils
 Conflicts: drakxtools <= 10.1-0.22mdk
 Conflicts: kdemultimedia-kscd <= 1:3.3.2-13mdk
 BuildArchitectures: noarch
+BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 Scripts to automatically set up peripherals when plugged in (mainly
