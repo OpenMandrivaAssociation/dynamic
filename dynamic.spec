@@ -11,7 +11,7 @@
 
 %define name dynamic
 %define version 0.26.14
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Scripts to automatically set up peripherals when plugged in 
 Name: %{name}
