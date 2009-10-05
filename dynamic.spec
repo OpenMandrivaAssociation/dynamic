@@ -11,7 +11,7 @@
 
 %define name dynamic
 %define version 0.26.17
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: Scripts to automatically set up peripherals when plugged in 
 Name: %{name}
@@ -41,11 +41,17 @@ for printers, and so on.
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
 
-# these launchers are on other packages now
-rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/dynamic/launchers/{rio500,scanner,webcam,part,supermount}
+# no longer provides any launcher
+rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/dynamic/launchers/*
 
-#mounting partitions is now done by gnome-volume-manager with HAL
-rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/dynamic/scripts/part.script
+#all system scripts are obsolete
+rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/dynamic/scripts/{camera,lp,rawdevice,rio500,scanner,visor,webcam,part}.script
+
+# hooks are obsolete
+rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/dynamic/hooks/*
+
+# kill udev rules
+rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/udev
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,8 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/dynamic/hooks
 %{_sysconfdir}/dynamic/scripts/*.script
 %{_sysconfdir}/dynamic/user-scripts/*.script
-%{_sysconfdir}/dynamic/hooks/*.hook
-%_sysconfdir/udev/rules.d/60-dynamic.rules
 %_datadir/dynamic
 
 # DON'T ADD SOURCE OR PATCH, USE SVN DIRECTLY
