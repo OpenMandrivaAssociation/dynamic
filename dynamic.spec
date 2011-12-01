@@ -38,23 +38,23 @@ for printers, and so on.
 %setup -q
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall
 
 # no longer provides any launcher
-rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/dynamic/launchers/*
+rm -rf %{buildroot}%{_sysconfdir}/dynamic/launchers/*
 
 #all system scripts are obsolete
-rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/dynamic/scripts/{camera,lp,rawdevice,rio500,scanner,visor,webcam,part}.script
+rm -rf %{buildroot}%{_sysconfdir}/dynamic/scripts/{camera,lp,rawdevice,rio500,scanner,visor,webcam,part}.script
 
 # hooks are obsolete
-rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/dynamic/hooks/*
+rm -rf %{buildroot}%{_sysconfdir}/dynamic/hooks/*
 
 # kill udev rules
-rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/udev
+rm -rf %{buildroot}%{_sysconfdir}/udev
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
