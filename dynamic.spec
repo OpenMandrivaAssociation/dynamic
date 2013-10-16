@@ -1,7 +1,7 @@
 Summary:	Scripts to automatically set up peripherals when plugged in 
 Name:		dynamic
 Version:	0.26.17
-Release:	9
+Release:	10
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		http://www.mandrivalinux.com/
