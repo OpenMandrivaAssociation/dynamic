@@ -4,7 +4,7 @@ Version:	0.26.17
 Release:	20
 License:	GPLv2
 Group:		System/Configuration/Other
-Url:		http://www.mandrivalinux.com/
+Url:		https://www.mandrivalinux.com/
 Source0:	%{name}-%{version}.tar.bz2
 BuildArch:	noarch
 Requires:	mount
